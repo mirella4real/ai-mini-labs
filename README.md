@@ -1,66 +1,35 @@
-# AI Mini Labs — Applied AI Systems Engineering
+# AI Mini Labs
 
-This repository is a structured exploration of modern AI system design.
+A series of hands-on mini labs exploring practical AI/ML engineering — from local inference and embeddings to RAG pipelines, structured output, evals, agents, and API design.
 
-The goal is not to build toy scripts, but to explore production-minded AI engineering patterns including:
+Built to demonstrate applied AI skills across the full development lifecycle: environment setup, clean code, testing, and reproducible delivery.
 
-- Local model inference
-- Embeddings and retrieval
-- LangChain orchestration
-- Structured outputs and validation
-- Evaluation and regression testing
-- Tool use and agent patterns
-- API wrapping and service design
+## Labs
 
-Each mini-lab is designed to be:
-- Small (<1 hour to implement)
-- Architecturally meaningful
-- Reproducible
-- Professionally structured
-- Focused on reliability and engineering discipline
+| # | Lab | Skills | Status |
+|---|-----|--------|--------|
+| 01 | Local LLM CLI | HF Transformers, local inference, CLI design | 🔜 |
+| 02 | Embeddings Similarity | Sentence transformers, cosine similarity, semantic search | 🔜 |
+| 03 | LangChain RAG | Document ingestion, chunking, retrieval, citations | 🔜 |
+| 04 | Structured Output | Pydantic, schema extraction, validation, retry logic | 🔜 |
+| 05 | Mini Evals | Evaluation harness, golden test cases, regression testing | 🔜 |
+| 06 | Tool Use Agent | Agent loops, function calling, safety controls | 🔜 |
+| 07 | FastAPI Microservice | API design, request/response schemas, observability | 🔜 |
 
----
-## Repository Structure
+## Stack
 
-```yaml
-ai-mini-labs:
-  00-setup: "Shared standards and tooling"
-  01-local-llm-cli: 
-  shared: "Shared utilities (config, logging)"
-  ```
----
-  ## Engineering Standards
+- **Python 3.11** (Apple Silicon / ARM64)
+- **uv** for dependency management
+- **ruff + black** for linting and formatting
+- **pre-commit** for code quality enforcement
 
-This repo enforces:
-
-- Python 3.11 runtime standardization
-- uv-based deterministic dependency management
-- Ruff + Black formatting
-- Pre-commit local quality gates
-- Environment configuration pattern via `.env`
-
-See `00-setup/` for details.
-
----
-## Why This Repo Exists
-
-This lab demonstrates architectural thinking around:
-
-- Tradeoffs (local vs hosted models)
-- Evaluation discipline
-- Guardrails and validation
-- Observability mindset
-- Developer workflow automation
-
-It is structured to resemble a small AI platform initiative rather than disconnected experiments.
-
----
-
-## Getting Started
-
+## Setup
 ```bash
-brew install uv
-uv venv
+git clone https://github.com/mirella4real/ai-mini-labs.git
+cd ai-mini-labs
+uv venv --python 3.11
+source .venv/bin/activate
 uv sync
-uv run pre-commit install
 ```
+
+Each lab has its own `README.md`, `requirements.txt`, and `src/` + `tests/` directories.
