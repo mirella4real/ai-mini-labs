@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "text": "Microservices should be independently deployable. Each service owns its data and communicates via APIs."
+  },
+  {
+    "id": 2,
+    "text": "Use circuit breakers to prevent cascading failures in distributed systems. Fail fast and recover gracefully."
+  },
+  {
+    "id": 3,
+    "text": "Embeddings are dense vector representations of text. Similar texts have vectors that are close together in vector space."
+  },
+  {
+    "id": 4,
+    "text": "Observability requires three pillars: logs for events, metrics for measurements, and traces for request flows."
+  },
+  {
+    "id": 5,
+    "text": "Cosine similarity measures the angle between two vectors. A score of 1.0 means identical direction, 0.0 means unrelated."
+  },
+  {
+    "id": 6,
+    "text": "CI/CD pipelines automate testing and deployment. Every commit should be releasable to production."
+  },
+  {
+    "id": 7,
+    "text": "RAG combines retrieval with generation — find relevant documents first, then use them as context for an LLM."
+  },
+  {
+    "id": 8,
+    "text": "Semantic search understands meaning rather than matching keywords. A query for 'fast cars' finds results about 'high speed vehicles'."
+  },
+  {
+    "id": 9,
+    "text": "Technical debt accumulates when short-term shortcuts are taken. It must be tracked and paid down deliberately."
+  },
+  {
+    "id": 10,
+    "text": "Vector databases like Pinecone, Weaviate, and ChromaDB are optimized for storing and querying embeddings at scale."
+  }
+]
