@@ -83,3 +83,21 @@ def search(
         }
         for idx in top_indices
     ]
+
+
+def save_embeddings(embeddings: np.ndarray, path: Path) -> None:
+    """
+    Save embeddings to disk in numpy binary format.
+    Much faster than recomputing on every run.
+    """
+    np.save(path, embeddings)
+
+
+def load_embeddings(path: Path) -> np.ndarray | None:
+    """
+    Load embeddings from disk if cache exists.
+    Returns None if cache file not found — caller should recompute.
+    """
+    if not Path(path).exists():
+        return None
+    return np.load(path)

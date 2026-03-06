@@ -125,3 +125,24 @@ def test_search_semantic_relevance(notes, model, embeddings):
     )
     top_texts = " ".join([r["text"] for r in results]).lower()
     assert any(word in top_texts for word in ["embedding", "vector", "semantic"])
+
+
+# ── cache ─────────────────────────────────────────────────────────────────────
+
+
+def test_save_and_load_embeddings(notes, model, embeddings, tmp_path):
+    """Embeddings saved to disk should load back identically."""
+    from src.embedder import save_embeddings, load_embeddings
+
+    cache_path = tmp_path / "test_cache.npy"
+    save_embeddings(embeddings, cache_path)
+    loaded = load_embeddings(cache_path)
+    assert np.allclose(embeddings, loaded)
+
+
+def test_load_embeddings_returns_none_if_missing(tmp_path):
+    """load_embeddings() should return None if cache file doesn't exist."""
+    from src.embedder import load_embeddings
+
+    result = load_embeddings(tmp_path / "nonexistent.npy")
+    assert result is None
